@@ -31,9 +31,12 @@ public class Lobster extends Actor
         if(isTouching(Crab.class))
         {
             removeTouching(Crab.class);
+            Greenfoot.playSound("au.wav");
+            Greenfoot.stop();
+            
         }
     }
-
+    
     /*
      * makes crab randomly turn left or right between 0 and 45 degrees
      */
