@@ -8,12 +8,14 @@ public class Crab extends Actor
     
     private GreenfootImage image1;
     private GreenfootImage image2;
+    private int wormsEaten;
     
     public Crab()
     {
         image1 = new GreenfootImage ("crab.png");
         image2 = new GreenfootImage ("crab2.png");
         setImage (image1);
+        wormsEaten = 0
     }
     public void act()
     {
@@ -25,8 +27,8 @@ public class Crab extends Actor
             {
                 turn (4);
             }
-                
-                
+        
+            
             lookForWorm();
             move();
           
@@ -52,7 +54,19 @@ public class Crab extends Actor
             Greenfoot.playSound("slurp.wav");
         }
     }
-
-
+    
+    /*
+     * Animation for crab
+     */
+    public void switchImage()
+    {
+        if (getImage() == image1)
+            {
+                setImage (image2);
+            }
+            else
+            {
+                setImage (image1);
+            }
     }
-
+}
